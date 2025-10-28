@@ -22,18 +22,18 @@ const nextConfig: NextConfig = {
     },
 
     // images: 画像最適化の設定
-    // images: {
-    //     // 外部画像のホスト名を許可
-    //     remotePatterns: [
-    //         { hostname: "placehold.jp" }, // ダミー画像サービス
-    //         { hostname: "lytsrkahbjbgaqzmtplk.supabase.co" }, // Supabaseストレージ
-    //         { hostname: "images.unsplash.com" }, // Unsplash画像
-    //     ],
-    //     // 画像最適化を有効化（falseで有効、trueで無効）
-    //     unoptimized: false,
-    //     // サポートする画像フォーマット
-    //     formats: ["image/webp", "image/avif"],
-    // },
+    images: {
+        // 外部画像のホスト名を許可
+        remotePatterns: [
+            { hostname: "placehold.jp" }, // ダミー画像サービス
+            { hostname: "afcrqthlmntlbnkphrbc.supabase.co" }, // Supabaseストレージ
+            { hostname: "images.unsplash.com" }, // Unsplash画像
+        ],
+        // 画像最適化を有効化（falseで有効、trueで無効）
+        unoptimized: false,
+        // サポートする画像フォーマット
+        formats: ["image/webp", "image/avif"],
+    },
 
     // バンドル分析ツールの設定（ANALYZE環境変数がtrueのときのみ有効）
     ...(process.env.ANALYZE === "true" && {
