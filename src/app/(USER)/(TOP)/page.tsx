@@ -12,13 +12,25 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
+import {
+    ArrowDownIcon,
+    LockClosedIcon,
+    FileTextIcon,
+    DiscIcon,
+    CubeIcon,
+    FileIcon,
+    LockOpen1Icon,
+    LightningBoltIcon,
+    CheckIcon,
+    ArrowRightIcon,
+} from "@radix-ui/react-icons";
 
 /**
  * TOPページ（ランディングページ）
  */
 export default function TopPage() {
     return (
-        <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
+        <div className="min-h-screen bg-linear-to-b from-blue-50 to-white">
             {/* ヒーローセクション */}
             <section className="relative overflow-hidden">
                 {/* 背景画像プレースホルダー */}
@@ -41,7 +53,7 @@ export default function TopPage() {
                             これもく
                         </h1>
                         <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto">
-                            木造建築の概算見積もりを、
+                            木造建築の概算を、
                             <br className="hidden md:block" />
                             4つの入力だけで簡単に確認
                         </p>
@@ -52,15 +64,18 @@ export default function TopPage() {
                                 size="lg"
                                 className="text-lg px-8 py-6"
                             >
-                                <Link href="/estimate">無料で始める</Link>
+                                <Link href="/estimate">概算を作成する</Link>
                             </Button>
                             <Button
                                 asChild
                                 size="lg"
-                                variant="outline"
-                                className="text-lg px-8 py-6"
+                                variant="ghost"
+                                className="text-base px-8 py-6 text-gray-600 hover:text-gray-900"
                             >
-                                <Link href="#features">機能を見る</Link>
+                                <Link href="#features">
+                                    機能を見る{" "}
+                                    <ArrowDownIcon className="w-4 h-4" />
+                                </Link>
                             </Button>
                         </div>
 
@@ -70,7 +85,7 @@ export default function TopPage() {
                                 <Image
                                     src="https://placehold.jp/2c3e50/ecf0f1/1920x1080.png?text=Application+Screen+Image"
                                     alt="アプリケーション画面のイメージ"
-                                    title="これもくアプリケーションのメイン画面（見積もり入力と結果表示）"
+                                    title="これもくアプリケーションのメイン画面（概算入力と結果表示）"
                                     width={1920}
                                     height={1080}
                                     className="w-full h-full object-cover"
@@ -88,14 +103,16 @@ export default function TopPage() {
                         主な機能
                     </h2>
                     <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-                        シンプルな操作で、高精度な概算見積もりを実現します
+                        シンプルな操作で、高精度な概算を実現します
                     </p>
 
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
                         {/* 機能1 */}
                         <Card className="border-blue-200 bg-blue-50/50 hover:shadow-lg transition-shadow">
                             <CardHeader>
-                                <div className="text-4xl mb-2">📝</div>
+                                <div className="mb-2">
+                                    <FileTextIcon className="w-10 h-10 text-blue-600" />
+                                </div>
                                 <CardTitle>4つの項目を入力するだけ</CardTitle>
                             </CardHeader>
                             <CardContent>
@@ -108,7 +125,9 @@ export default function TopPage() {
                         {/* 機能2 */}
                         <Card className="border-green-200 bg-green-50/50 hover:shadow-lg transition-shadow">
                             <CardHeader>
-                                <div className="text-4xl mb-2">💰</div>
+                                <div className="mb-2">
+                                    <DiscIcon className="w-10 h-10 text-green-600" />
+                                </div>
                                 <CardTitle>リアルタイムで金額表示</CardTitle>
                             </CardHeader>
                             <CardContent>
@@ -121,7 +140,9 @@ export default function TopPage() {
                         {/* 機能3 */}
                         <Card className="border-purple-200 bg-purple-50/50 hover:shadow-lg transition-shadow">
                             <CardHeader>
-                                <div className="text-4xl mb-2">🏗️</div>
+                                <div className="mb-2">
+                                    <CubeIcon className="w-10 h-10 text-purple-600" />
+                                </div>
                                 <CardTitle>3Dモデルで視覚的に確認</CardTitle>
                             </CardHeader>
                             <CardContent>
@@ -134,12 +155,14 @@ export default function TopPage() {
                         {/* 機能4 */}
                         <Card className="border-yellow-200 bg-yellow-50/50 hover:shadow-lg transition-shadow">
                             <CardHeader>
-                                <div className="text-4xl mb-2">📄</div>
+                                <div className="mb-2">
+                                    <FileIcon className="w-10 h-10 text-yellow-600" />
+                                </div>
                                 <CardTitle>PDF出力機能</CardTitle>
                             </CardHeader>
                             <CardContent>
                                 <CardDescription className="text-gray-700">
-                                    見積書をPDFとしてダウンロード可能。クライアントへの提案資料としてすぐに使えます。
+                                    概算書をPDFとしてダウンロード可能。クライアントへの提案資料としてすぐに使えます。
                                 </CardDescription>
                             </CardContent>
                         </Card>
@@ -147,7 +170,9 @@ export default function TopPage() {
                         {/* 機能5 */}
                         <Card className="border-red-200 bg-red-50/50 hover:shadow-lg transition-shadow">
                             <CardHeader>
-                                <div className="text-4xl mb-2">🔒</div>
+                                <div className="mb-2">
+                                    <LockOpen1Icon className="w-10 h-10 text-red-600" />
+                                </div>
                                 <CardTitle>簡単な入力だけで使える</CardTitle>
                             </CardHeader>
                             <CardContent>
@@ -160,12 +185,14 @@ export default function TopPage() {
                         {/* 機能6 */}
                         <Card className="border-indigo-200 bg-indigo-50/50 hover:shadow-lg transition-shadow">
                             <CardHeader>
-                                <div className="text-4xl mb-2">⚡</div>
+                                <div className="mb-2">
+                                    <LightningBoltIcon className="w-10 h-10 text-indigo-600" />
+                                </div>
                                 <CardTitle>簡単・スピーディー</CardTitle>
                             </CardHeader>
                             <CardContent>
                                 <CardDescription className="text-gray-700">
-                                    複雑な見積もり計算が、わずか数秒で完了。時間を大幅に短縮できます。
+                                    複雑な概算計算が、わずか数秒で完了。時間を大幅に短縮できます。
                                 </CardDescription>
                             </CardContent>
                         </Card>
@@ -185,11 +212,11 @@ export default function TopPage() {
                     <div className="max-w-4xl mx-auto space-y-8">
                         {/* Step 1 */}
                         <Card className="hover:shadow-lg transition-shadow">
-                            <CardContent className="pt-6">
+                            <CardContent>
                                 <div className="flex gap-4 items-start">
                                     <Badge
                                         variant="default"
-                                        className="flex-shrink-0 w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center text-xl font-bold"
+                                        className="shrink-0 w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center text-xl font-bold"
                                     >
                                         1
                                     </Badge>
@@ -213,11 +240,11 @@ export default function TopPage() {
 
                         {/* Step 2 */}
                         <Card className="hover:shadow-lg transition-shadow">
-                            <CardContent className="pt-6">
+                            <CardContent>
                                 <div className="flex gap-4 items-start">
                                     <Badge
                                         variant="default"
-                                        className="flex-shrink-0 w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center text-xl font-bold"
+                                        className="shrink-0 w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center text-xl font-bold"
                                     >
                                         2
                                     </Badge>
@@ -241,11 +268,11 @@ export default function TopPage() {
 
                         {/* Step 3 */}
                         <Card className="hover:shadow-lg transition-shadow">
-                            <CardContent className="pt-6">
+                            <CardContent>
                                 <div className="flex gap-4 items-start">
                                     <Badge
                                         variant="default"
-                                        className="flex-shrink-0 w-12 h-12 bg-green-600 text-white rounded-full flex items-center justify-center text-xl font-bold"
+                                        className="shrink-0 w-12 h-12 bg-green-600 text-white rounded-full flex items-center justify-center text-xl font-bold"
                                     >
                                         3
                                     </Badge>
@@ -269,11 +296,11 @@ export default function TopPage() {
 
                         {/* Step 4 */}
                         <Card className="hover:shadow-lg transition-shadow">
-                            <CardContent className="pt-6">
+                            <CardContent>
                                 <div className="flex gap-4 items-start">
                                     <Badge
                                         variant="default"
-                                        className="flex-shrink-0 w-12 h-12 bg-purple-600 text-white rounded-full flex items-center justify-center text-xl font-bold"
+                                        className="shrink-0 w-12 h-12 bg-purple-600 text-white rounded-full flex items-center justify-center text-xl font-bold"
                                     >
                                         4
                                     </Badge>
@@ -288,7 +315,7 @@ export default function TopPage() {
                                             </Badge>
                                         </h3>
                                         <p className="text-gray-600">
-                                            必要に応じて、見積書をPDFとしてダウンロードできます。
+                                            必要に応じて、概算書をPDFとしてダウンロードできます。
                                         </p>
                                     </div>
                                 </div>
@@ -298,74 +325,70 @@ export default function TopPage() {
 
                     <div className="text-center mt-12">
                         <Button asChild size="lg" className="text-lg px-8 py-6">
-                            <Link href="/estimate">今すぐ始める</Link>
+                            <Link href="/estimate">概算を試す</Link>
                         </Button>
                     </div>
 
                     {/* スクリーンショット例 */}
                     <div className="mt-16 grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
                         {/* 入力画面 */}
-                        <Card className="overflow-hidden hover:shadow-xl transition-shadow">
-                            <CardHeader className="bg-blue-50">
+                        <Card className="overflow-hidden hover:shadow-xl transition-shadow bg-blue-50 pb-0">
+                            <CardHeader className="">
                                 <div className="flex items-center justify-between">
                                     <CardTitle className="text-lg">
                                         ステップ1-2: 入力画面
                                     </CardTitle>
                                     <Badge
                                         variant="default"
-                                        className="bg-blue-600"
+                                        className="bg-blue-600 text-white"
                                     >
                                         入力
                                     </Badge>
                                 </div>
                             </CardHeader>
-                            <CardContent className="p-0">
-                                <div className="relative aspect-[4/3]">
-                                    <Image
-                                        src="https://placehold.jp/3498db/ffffff/1200x900.png?text=Input+Form+Screen"
-                                        alt="入力フォーム画面"
-                                        title="4つの項目を入力する画面（防火地域等、階数、スパン、奥行き）"
-                                        width={1200}
-                                        height={900}
-                                        className="w-full h-full object-cover"
-                                    />
-                                </div>
+                            <CardContent className="p-0 relative aspect-4/3">
+                                <Image
+                                    src="https://placehold.jp/3498db/ffffff/1200x900.png?text=Input+Form+Screen"
+                                    alt="入力フォーム画面"
+                                    title="4つの項目を入力する画面（防火地域等、階数、スパン、奥行き）"
+                                    width={1200}
+                                    height={900}
+                                    className="w-full h-full object-cover"
+                                />
                             </CardContent>
                         </Card>
 
                         {/* 結果画面 */}
-                        <Card className="overflow-hidden hover:shadow-xl transition-shadow">
-                            <CardHeader className="bg-green-50">
+                        <Card className="overflow-hidden hover:shadow-xl transition-shadow bg-green-50 pb-0">
+                            <CardHeader className="">
                                 <div className="flex items-center justify-between">
                                     <CardTitle className="text-lg">
                                         ステップ3: 結果表示画面
                                     </CardTitle>
                                     <Badge
                                         variant="default"
-                                        className="bg-green-600"
+                                        className="bg-green-600 text-white"
                                     >
                                         結果
                                     </Badge>
                                 </div>
                             </CardHeader>
-                            <CardContent className="p-0">
-                                <div className="relative aspect-[4/3]">
-                                    <Image
-                                        src="https://placehold.jp/27ae60/ffffff/1200x900.png?text=Result+Screen+with+3D"
-                                        alt="結果表示画面"
-                                        title="概算金額と建物の3Dモデル表示画面"
-                                        width={1200}
-                                        height={900}
-                                        className="w-full h-full object-cover"
-                                    />
-                                </div>
+                            <CardContent className="p-0 relative aspect-4/3">
+                                <Image
+                                    src="https://placehold.jp/27ae60/ffffff/1200x900.png?text=Result+Screen+with+3D"
+                                    alt="結果表示画面"
+                                    title="概算金額と建物の3Dモデル表示画面"
+                                    width={1200}
+                                    height={900}
+                                    className="w-full h-full object-cover"
+                                />
                             </CardContent>
                         </Card>
                     </div>
 
                     {/* 機能説明画像 */}
                     <div className="mt-16 max-w-4xl mx-auto">
-                        <Card className="bg-gradient-to-r from-purple-50 to-pink-50 border-purple-200 hover:shadow-xl transition-shadow">
+                        <Card className="bg-linear-to-r from-purple-50 to-pink-50 border-purple-200 hover:shadow-xl transition-shadow">
                             <CardContent className="p-8 md:p-12">
                                 <div className="grid md:grid-cols-2 gap-8 items-center">
                                     <div className="space-y-6">
@@ -387,52 +410,35 @@ export default function TopPage() {
                                         <Separator />
                                         <ul className="space-y-3 text-gray-700">
                                             <li className="flex items-center gap-3">
-                                                <Badge
-                                                    variant="outline"
-                                                    className="text-green-600 border-green-600"
-                                                >
-                                                    ✓
-                                                </Badge>
+                                                <CheckIcon className="shrink-0 w-5 h-5 text-green-600" />
                                                 <span>
                                                     リアルタイムで3Dモデルが更新
                                                 </span>
                                             </li>
                                             <li className="flex items-center gap-3">
-                                                <Badge
-                                                    variant="outline"
-                                                    className="text-green-600 border-green-600"
-                                                >
-                                                    ✓
-                                                </Badge>
+                                                <CheckIcon className="shrink-0 w-5 h-5 text-green-600" />
                                                 <span>
                                                     角度を変えて確認可能
                                                 </span>
                                             </li>
                                             <li className="flex items-center gap-3">
-                                                <Badge
-                                                    variant="outline"
-                                                    className="text-green-600 border-green-600"
-                                                >
-                                                    ✓
-                                                </Badge>
+                                                <CheckIcon className="shrink-0 w-5 h-5 text-green-600" />
                                                 <span>
                                                     寸法の視覚的な理解をサポート
                                                 </span>
                                             </li>
                                         </ul>
                                     </div>
-                                    <Card className="overflow-hidden shadow-xl border-2 border-purple-300">
-                                        <CardContent className="p-0">
-                                            <div className="relative aspect-square">
-                                                <Image
-                                                    src="https://placehold.jp/9b59b6/ffffff/800x800.png?text=3D+Model+View"
-                                                    alt="3Dモデル表示画面"
-                                                    title="建物の3Dビューを表示する画面（回転・ズーム可能）"
-                                                    width={800}
-                                                    height={800}
-                                                    className="w-full h-full object-cover"
-                                                />
-                                            </div>
+                                    <Card className="overflow-hidden shadow-xl border-2 border-purple-300 p-0">
+                                        <CardContent className="p-0 relative aspect-square">
+                                            <Image
+                                                src="https://placehold.jp/9b59b6/ffffff/800x800.png?text=3D+Model+View"
+                                                alt="3Dモデル表示画面"
+                                                title="建物の3Dビューを表示する画面（回転・ズーム可能）"
+                                                width={800}
+                                                height={800}
+                                                className="w-full h-full object-cover"
+                                            />
                                         </CardContent>
                                     </Card>
                                 </div>
@@ -448,124 +454,83 @@ export default function TopPage() {
             <section className="py-16 bg-white">
                 <div className="container mx-auto px-4 max-w-4xl">
                     <div className="flex items-center justify-center gap-3 mb-8">
-                        <Badge
-                            variant="outline"
-                            className="text-blue-600 border-blue-600"
-                        >
-                            🔒 セキュリティ
-                        </Badge>
+                        <LockClosedIcon className="w-6 h-6 text-blue-600" />
                         <h2 className="text-3xl md:text-4xl font-bold text-center">
                             個人情報の取扱について
                         </h2>
                     </div>
 
                     <Card className="bg-blue-50/50 border-blue-200">
-                        <CardContent className="p-6 md:p-8 space-y-4">
-                            <Card className="bg-white">
-                                <CardContent className="pt-6">
-                                    <div className="flex items-start gap-3">
-                                        <Badge
-                                            variant="default"
-                                            className="text-2xl p-2 bg-blue-600"
-                                        >
-                                            ✓
-                                        </Badge>
-                                        <div>
-                                            <CardTitle className="text-lg mb-2">
-                                                簡単な入力のみで利用可能
-                                            </CardTitle>
-                                            <CardDescription className="text-gray-700">
-                                                お名前とメールアドレスのみで、すぐにご利用いただけます。
-                                                複雑な会員登録は不要です。
-                                            </CardDescription>
-                                        </div>
-                                    </div>
-                                </CardContent>
-                            </Card>
+                        <CardContent className="p-6 md:p-8">
+                            <div className="space-y-6">
+                                <div>
+                                    <p className="text-gray-800 text-base leading-relaxed mb-6">
+                                        本サービスでは、お客様の個人情報を適切に保護するため、以下の情報を収集・保存いたします：
+                                    </p>
 
-                            <Card className="bg-white">
-                                <CardContent className="pt-6">
-                                    <div className="flex items-start gap-3">
-                                        <Badge
-                                            variant="default"
-                                            className="text-2xl p-2 bg-green-600"
-                                        >
-                                            ✓
-                                        </Badge>
-                                        <div>
-                                            <div className="flex items-center gap-2 mb-2">
-                                                <CardTitle className="text-lg">
-                                                    安全なログイン認証
-                                                </CardTitle>
-                                                <Badge
-                                                    variant="secondary"
-                                                    className="text-xs"
-                                                >
-                                                    Supabase
-                                                </Badge>
-                                            </div>
-                                            <CardDescription className="text-gray-700">
-                                                Supabase認証を使用した安全なログインシステムを採用。
-                                                お客様の情報は適切に保護されます。
-                                            </CardDescription>
-                                        </div>
-                                    </div>
-                                </CardContent>
-                            </Card>
+                                    <ul className="space-y-3 mb-6">
+                                        <li className="flex items-start gap-3">
+                                            <CheckIcon className="shrink-0 mt-0.5 w-5 h-5 text-blue-600" />
+                                            <span className="text-gray-700">
+                                                お客様のお名前
+                                            </span>
+                                        </li>
+                                        <li className="flex items-start gap-3">
+                                            <CheckIcon className="shrink-0 mt-0.5 w-5 h-5 text-blue-600" />
+                                            <span className="text-gray-700">
+                                                メールアドレス
+                                            </span>
+                                        </li>
+                                        <li className="flex items-start gap-3">
+                                            <CheckIcon className="shrink-0 mt-0.5 w-5 h-5 text-blue-600" />
+                                            <span className="text-gray-700">
+                                                建物の仕様情報（防火地域、階数、スパン、奥行き）
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </div>
 
-                            <Card className="bg-white">
-                                <CardContent className="pt-6">
-                                    <div className="flex items-start gap-3">
-                                        <Badge
-                                            variant="default"
-                                            className="text-2xl p-2 bg-purple-600"
-                                        >
-                                            ✓
-                                        </Badge>
-                                        <div>
-                                            <CardTitle className="text-lg mb-2">
-                                                プロジェクトデータの保存
-                                            </CardTitle>
-                                            <CardDescription className="text-gray-700">
-                                                入力されたプロジェクトデータは安全に保存され、いつでもアクセス可能です。
-                                                作成した見積書は履歴から確認できます。
-                                            </CardDescription>
-                                        </div>
-                                    </div>
-                                </CardContent>
-                            </Card>
+                                <Separator />
 
-                            <Card className="bg-white">
-                                <CardContent className="pt-6">
+                                <div className="bg-white rounded-lg p-4 border border-gray-200">
+                                    <p className="text-gray-800 text-base leading-relaxed">
+                                        これらの情報は、概算の提供およびサービス改善の目的でのみ使用され、
+                                        <strong className="text-gray-900">
+                                            第三者に提供されることはありません
+                                        </strong>
+                                        。
+                                    </p>
+                                </div>
+
+                                <div className="bg-green-50 rounded-lg p-4 border border-green-200">
                                     <div className="flex items-start gap-3">
                                         <Badge
                                             variant="default"
-                                            className="text-2xl p-2 bg-orange-600"
+                                            className="shrink-0 text-lg p-2 bg-green-600"
                                         >
-                                            ✓
+                                            <LockClosedIcon className="w-6 h-6" />
                                         </Badge>
                                         <div>
-                                            <CardTitle className="text-lg mb-2">
-                                                プライバシーを尊重
-                                            </CardTitle>
-                                            <CardDescription className="text-gray-700">
-                                                収集する情報は最小限に抑え、プライバシーを尊重した設計となっています。
-                                                個人情報は見積書の作成と管理にのみ使用されます。
-                                            </CardDescription>
+                                            <p className="text-gray-800 font-semibold mb-1">
+                                                安全なデータ保護
+                                            </p>
+                                            <p className="text-gray-700 text-sm">
+                                                最新のセキュリティ技術を採用し、お客様の情報を適切に保護いたします。
+                                            </p>
                                         </div>
                                     </div>
-                                </CardContent>
-                            </Card>
+                                </div>
+                            </div>
                         </CardContent>
                     </Card>
                 </div>
             </section>
 
             {/* CTAセクション */}
-            <section className="py-16 bg-gradient-to-r from-blue-600 to-blue-700 text-white">
+            <section className="py-16 bg-linear-to-r from-blue-600 to-blue-700 text-white">
                 <div className="container mx-auto px-4 text-center space-y-6">
                     <h2 className="text-3xl md:text-4xl font-bold">
-                        木造建築の概算見積もりを今すぐ始めましょう
+                        木造建築の概算を今すぐ始めましょう
                     </h2>
                     <p className="text-xl opacity-90 max-w-2xl mx-auto">
                         無料でご利用いただけます
@@ -577,7 +542,7 @@ export default function TopPage() {
                             variant="secondary"
                             className="text-lg px-8 py-6"
                         >
-                            <Link href="/estimate">無料で始める →</Link>
+                            <Link href="/estimate">すぐに概算する <ArrowRightIcon className="w-4 h-4" /></Link>
                         </Button>
                     </div>
                 </div>
@@ -590,7 +555,7 @@ export default function TopPage() {
                         © 2024 これもく（KOREMOKU）. All rights reserved.
                     </p>
                     <p className="text-sm text-gray-500 mt-2">
-                        木造建築の概算見積もりアプリケーション
+                        木造建築の概算アプリケーション
                     </p>
                 </div>
             </footer>
